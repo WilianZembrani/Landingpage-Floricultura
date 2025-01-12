@@ -1,10 +1,13 @@
-* {
+* { 
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-    background-color: rgb(240, 240, 240);
+    background-image: url(/assets/img/backgroud-image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 html {
@@ -13,48 +16,52 @@ html {
 
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-
+    justify-content: space-between; 
+    align-items: center;
 }
 
 .container .logo-nav{
     display: flex;
-    align-items: center;
-    width: 15rem;
-
-
+    width: 17rem;
 }
 
 .container .navbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
     list-style: none;
     transition: background-color 0.3s
 
 }
 .container .navbar li{
-    margin: 5rem;
-    font-size: 2rem;
-    border-radius: 5px;
-
+    margin: 3rem;
+    font-size: 1.5rem;
 }
 .navbar li a{
-    color: purple;
+    color: rgb(129, 4, 129);
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
-    background-color: rgb(240, 240, 240);
-
 }
 
 li a:hover {
     background-color: rgb(227, 216, 216);
     transition: background-color 0.3s;
     
+}
+
+.button-nav {
+    cursor: pointer;
+    color: black;
+    border: 0.01rem solid rgb(130, 130, 130);
+    border-radius: 5rem;
+    padding: 0.7rem 1rem;
+    margin-right:5rem ;
+}
+
+.content {
+    margin: 5rem;
+    align-items: right;
+    text-align: right;
 }
 
 @media (max-width: 768px) {
@@ -72,6 +79,5 @@ li a:hover {
         margin: 1rem 0;
     }
 }
-
 
 
