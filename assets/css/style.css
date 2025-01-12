@@ -1,10 +1,12 @@
 * { 
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body{
+    font-family: "Work Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     background-image: url(/assets/img/backgroud-image.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,71 +15,167 @@ body{
 html {
     scroll-behavior: smooth;
 }
+.header {
+    width: 100%;
+    height: auto;
+}
 
 .container {
     display: flex;
     justify-content: space-between; 
     align-items: center;
+    margin-right: 30rem;
 }
 
 .container .logo-nav{
-    display: flex;
     width: 17rem;
+    margin-left: 2rem;
 }
 
 .container .navbar {
     display: flex;
-    text-decoration: none;
     list-style: none;
-    transition: background-color 0.3s
-
 }
+
 .container .navbar li{
-    margin: 3rem;
+    text-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.32);
+    margin: 4rem;
+    font-weight: 300;
     font-size: 1.5rem;
 }
 .navbar li a{
     color: rgb(129, 4, 129);
-    padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
+    padding: 0.5rem 1rem;
+    padding-block: 1.6rem;
 }
 
 li a:hover {
     background-color: rgb(227, 216, 216);
     transition: background-color 0.3s;
-    
-}
-
-.button-nav {
-    cursor: pointer;
-    color: black;
-    border: 0.01rem solid rgb(130, 130, 130);
-    border-radius: 5rem;
-    padding: 0.7rem 1rem;
-    margin-right:5rem ;
 }
 
 .content {
-    margin: 5rem;
+    margin-top: 8rem;
+    margin-right: 6rem;
     align-items: right;
     text-align: right;
 }
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar {
-        flex-direction: column; /* Links em coluna */
-        margin-top: 1rem;
-    }
-
-    .navbar li {
-        margin: 1rem 0;
-    }
+.content .title1 {
+    font-size: 4rem;
+    color: rgb(129, 4, 129);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-shadow: 0.2rem 0.4rem 0.4rem rgba(0, 0, 0, 0.249);
+}
+.content p {
+    text-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.218);
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 
+.content .button-content {
+    cursor: pointer;
+    background-color: rgb(129, 4, 129);
+    color: rgb(255, 255, 255);
+    font-weight: 200;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    margin-top: 5rem;
+    padding: 0.9rem 1.6rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.358);
 
+}
+.content button:hover {
+    background-color: rgb(73, 2, 73);
+    transition: background-color 0.3s;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 0.32rem solid rgb(255, 255, 255);
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: auto;
+    z-index: 1;
+}
+.hamburger::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.3rem;
+    background-color: rgb(255, 255, 255);
+    margin-top: 0.5rem;
+}
+.hamburger::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.3rem;
+    background-color: rgb(255, 255, 255);
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    body{
+        background-image: none;
+        background-color: #e7e7e7;
+    }
+
+    
+    .hamburger{
+        z-index: 2;
+        display:block;
+        margin-right: 1rem;
+        margin-top: 1rem;
+
+    }
+    .navbar {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #d9d8d8;
+        clip-path: circle(5rem at 100% -15%);
+        transition: 1s ease-out;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+
+    }
+
+    .container.active .navbar{
+        clip-path: circle(150rem at 90% -15%);
+        pointer-events: all;
+    }
+
+    .logo-nav {
+        z-index: 0;
+    }
+
+    .content {
+        margin-top: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    
+
+}
