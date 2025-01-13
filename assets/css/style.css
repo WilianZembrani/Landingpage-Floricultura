@@ -7,8 +7,8 @@ body{
     font-family: "Work Sans", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-image: url(/assets/img/backgroud-image.png);
-    background-size: cover;
+    background-image: url(/assets/img/backgroud-image1.png);
+    background-size:auto;
     background-repeat: no-repeat;
 }
 
@@ -40,7 +40,7 @@ html {
 .container .navbar li{
     text-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.32);
     margin: 4rem;
-    font-weight: 300;
+    font-weight: 350;
     font-size: 1.5rem;
 }
 .navbar li a{
@@ -58,7 +58,7 @@ li a:hover {
 
 .content {
     margin-top: 8rem;
-    margin-right: 6rem;
+    margin-right: 9rem;
     align-items: right;
     text-align: right;
 }
@@ -122,7 +122,28 @@ li a:hover {
     margin-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1700px){
+    body{
+        background-size:auto;
+        background-repeat:unset;
+    }
+
+    .container .logo-nav{
+        width: 17rem;
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 1250px){
+    body{
+        background-image: none;
+        background-color: #e7e7e7
+    }
+}
+
+
+
+@media (max-width: 1100px ) {
 
     .container {
         flex-direction: column;
@@ -150,8 +171,8 @@ li a:hover {
         width: 100vw;
         height: 100vh;
         background: #d9d8d8;
-        clip-path: circle(5rem at 100% -15%);
-        transition: 1s ease-out;
+        clip-path: circle(5rem at 110% -15%);
+        transition: 1s all;
 
         flex-direction: column;
         justify-content: space-around;
@@ -168,6 +189,7 @@ li a:hover {
 
     .logo-nav {
         z-index: 0;
+        width: 17rem;
     }
 
     .content {
